@@ -4,9 +4,9 @@ import { graphql } from 'gatsby'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
-import Post from '../components/post'
+import Cv from '../components/cv'
 
-const BlogPostTemplate = ({ data, pageContext }) => {
+const CvTemplate = ({ data, pageContext }) => {
   const {
     frontmatter: { title, date, path, author, coverImage, excerpt, tags },
     excerpt: autoExcerpt,
@@ -18,7 +18,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title={title} description={excerpt || autoExcerpt} />
-      <Post
+      <Cv
         key={id}
         title={title}
         date={date}
@@ -34,9 +34,9 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   )
 }
 
-export default BlogPostTemplate
+export default CvTemplate
 
-BlogPostTemplate.propTypes = {
+CvTemplate.propTypes = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.shape({
     next: PropTypes.object,
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1200, grayscale: true, quality: 95, pngCompressionSpeed: 1) {
               ...GatsbyImageSharpFluid_noBase64
-            }
+            }  
           }
         }
       }

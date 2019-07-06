@@ -13,6 +13,10 @@
   --dark-color-secondary: #73747b;
   --dark-border-color: #4a4b50;
 
+  /* custom colors */
+  --dark-underlay-color: rgb(52, 58, 64);
+  --light-underlay-color: rgb(233, 233, 233);
+
   /* variables for js, must be the same as these in @custom-media queries */
   --phoneWidth: (max-width: 684px);
   --tabletWidth: (max-width: 900px);

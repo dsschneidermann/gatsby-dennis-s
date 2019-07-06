@@ -1,0 +1,155 @@
+.cv {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  padding: 20px;
+  margin: 0 auto 20px;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--light-border-color);
+
+    :global .dark-theme :local & {
+      border-color: var(--dark-border-color);
+    }
+  }
+
+  @media (--tablet) {
+    max-width: 660px;
+  }
+
+  h1 {
+    margin: 0 0 10px;
+  }
+
+  img {
+    border-radius: 8px;
+  }
+}
+
+.highlightOrange {
+  display: inline-block;
+  color: var(--light-color);
+  background: orange;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  :global .dark-theme :local & {
+    background: darkorange;
+  }
+}
+
+.highlightBlue {
+  display: inline-block;
+  color: var(--light-color);
+  background: lightblue;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  :global .dark-theme :local & {
+    background: cadetblue;
+  }
+}
+
+.cvSummary {
+  background: var(--light-underlay-color);
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 15px 15px 3px 15px;
+
+  display: flex;
+
+  h1, h2, h3 {
+    margin-top: 0px;
+  }
+
+  :global .dark-theme :local & {
+    background: var(--dark-underlay-color);
+  }
+
+  &>div {
+    flex: 1;
+  }
+}
+
+.cvIntro {
+  display: flex;
+
+  &>div {
+    background: var(--light-underlay-color);
+    border-radius: 10px;
+    flex: 1;
+
+    margin: 0 5px 0 5px;
+    padding: 0 10px 0 10px;
+
+    :global .dark-theme :local & {
+      background: var(--dark-underlay-color);
+    }
+  }
+}
+
+.cvProject {
+  border-top: 1px solid var(--light-color-secondary);
+  margin-top: 35px;
+
+  h1+&, h2+&, h3+& {
+    margin-top: 0px !important;
+  }
+
+  :global .dark-theme :local & {
+    border-color: var(--dark-color-secondary);
+  }
+}
+
+.cvIcons {
+  color: burlywood;
+  font-size: 2em;
+  margin-top: 15px;
+  margin-bottom: -5px;
+  margin-right: 10px;
+
+  :global .dark-theme :local & {
+    color: darkslategrey;
+  }
+}
+
+.title {
+  a {
+    text-decoration: none;
+  }
+}
+
+.coverImage {
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+}
+
+.meta {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.tags {
+  margin-top: 10px;
+  opacity: .5;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.readMore {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+.cvContent {
+  position: relative;
+}

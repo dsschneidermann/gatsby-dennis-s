@@ -7,6 +7,7 @@ const pageTypeRegex = /src\/(.*?)\//
 const getType = node => node.fileAbsolutePath.match(pageTypeRegex)[1]
 
 const pageTemplate = path.resolve(`./src/templates/page.js`)
+const cvTemplate = path.resolve(`./src/templates/cv.js`)
 const indexTemplate = path.resolve(`./src/templates/index.js`)
 const tagsTemplate = path.resolve(`./src/templates/tags.js`)
 
@@ -80,7 +81,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
 
       createPage({
         path: node.frontmatter.path,
-        component: pageTemplate,
+        component: getType(node) === 'cv' ? cvTemplate : pageTemplate,
         context: {
           type: getType(node),
           next: isNextSameType ? next : null,
