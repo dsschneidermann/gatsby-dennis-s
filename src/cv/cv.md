@@ -52,7 +52,7 @@ My current career goal:
 
 ## :hammer: Programming
 
-C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Elm, Go, Java and Elixir.
+C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Elm, Go and Java
 
 ## :briefcase: Consulting
 
