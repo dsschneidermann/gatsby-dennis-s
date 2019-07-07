@@ -110,6 +110,12 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          {
+            resolve: `gatsby-remark-emoji-unicode`
+          },
+          {
+            resolve: `gatsby-remark-smartypants`
+          }
         ],
       },
     },
