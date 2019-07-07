@@ -28,6 +28,16 @@
   img {
     border-radius: 8px;
   }
+
+  figure {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+
+    figcaption {
+      margin-top: 20px;
+    }
+  }
 }
 
 .title {

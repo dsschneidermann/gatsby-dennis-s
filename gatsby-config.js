@@ -93,8 +93,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-              quality: 100,
+              maxWidth: 1200,
+              quality: 95,
+              pngCompressionSpeed: 1,
+              linkImagesToOriginal: false,
+              showCaptions: true,
             },
           },
           {
@@ -113,8 +116,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-hello-friend`,
-        short_name: `hello-friend`,
+        name: `gatsby-dennis-s`,
+        short_name: `dennis-s`,
         start_url: `/`,
         background_color: `#292a2d`,
         theme_color: `#292a2d`,

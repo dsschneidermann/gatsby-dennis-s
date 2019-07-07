@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-hello-friend",
-  "description": "A simple starter for Gatsby. That's it.",
+  "name": "gatsby-dennis-s",
+  "description": "Based on gatsby-starter-hello-friend.",
   "version": "0.2.0",
-  "author": "Radek Kozieł <radoslaw.koziel@gmail.com>",
+  "author": "Dennis Schneidermann <dssnider@gmail.com>",
   "keywords": [
     "gatsby",
     "minimal",
@@ -66,9 +66,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/panr/gatsby-starter-hello-friend"
+    "url": "https://github.com/dsschneidermann/gatsby-dennis-s"
   },
   "bugs": {
-    "url": "https://github.com/panr/gatsby-starter-hello-friend/issues"
+    "url": "https://github.com/dsschneidermann/gatsby-dennis-s/issues"
   }
 }

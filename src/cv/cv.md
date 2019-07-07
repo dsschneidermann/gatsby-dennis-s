@@ -1,16 +1,14 @@
 ---
-title: "CV"
-date: "2019-06-07"
-author: "Dennis"
-path: "/cv"
-coverImage: "../images/CVHead.jpg"
+title: CV
+date: 2019-06-07
+author: Dennis
+path: /cv
+coverImage: ../images/cv-head.jpg
 ---
 
-<style type="text/css">.highlightBlue { display:inline-block;color:black;background:lightblue;border-radius:3px;padding-left:5px;padding-right:5px; }</style>
-<style type="text/css">.highlightOrange { display:inline-block;color:black;background:orange;border-radius:3px;padding-left:5px;padding-right:5px; }</style>
 <br>
 
-My current career goal: 
+My current career goal:
 - Remain a top-tier expert software architect and developer
 
 <div class="cvSummary">
@@ -71,7 +69,7 @@ Aside from C<i>#</i>, SQL and Javascript which are my commonly used languages, I
 ✔️ Very experienced in documenting technical solution details, architecture and operational information
 
 ## 📱 Frontend
- 
+
 ✔️ Experienced with HTML5, CSS3, Foundation, Bootstrap, less, sass, post-css, jQuery, CommonJS, Angular 2, React, D3.js graphs
 
 <br>
