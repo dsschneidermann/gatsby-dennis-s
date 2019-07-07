@@ -5,6 +5,8 @@
   padding: 20px;
   margin: 0 auto 20px;
 
+  font-feature-settings: normal;
+
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--light-border-color);
 
@@ -36,6 +38,23 @@
 
     figcaption {
       margin-top: 20px;
+    }
+  }
+
+  table {
+    @media (--phone) {
+      font-size: x-small;
+    }
+  }
+
+  pre[class*="language-"] {
+    @media (--phone) {
+      font-size: x-small !important;
+    }
+    code {
+      @media (--phone) {
+        font-size: x-small !important;
+      }
     }
   }
 }
