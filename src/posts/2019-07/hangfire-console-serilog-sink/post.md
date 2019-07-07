@@ -164,18 +164,19 @@ The second way I want to show is a skycrane solution. I did not opt for using it
 
 A &lsquo;skycrane&rsquo; is the software term for a solution that doesn't need the support from other pieces of code and therefore works very efficiently. However it also comes with some danger of not being able to grow with the project.. I think this is a perfect example of how that works.
 
-The skycrane here is `AsyncLocal<T>`, aka. what used to be the `LogicalCallContext` in. NET.
+The skycrane here is `AsyncLocal<T>`, aka. what used to be the `LogicalCallContext` in .NET.
 
 `AsyncLocal<T>` is so called because it will keep the set value (a local variable) even when used across async/await code. Basically it is the async/concurrency-safe alternative to `static`, in the same way `[TheadStatic]` attribute used to be when using blocking threads.
 
-`AsyncLocal` is great for passing context to Serilog. You can write code to make the a sink aware of your variable, and pull whatever it needs from there. 
+`AsyncLocal` is great for passing context to Serilog. You can write code to make the sink aware of your variable, and pull whatever it needs from there. 
 
 ```csharp
 public class HangfireConsoleSink : ILogEventSink
 {
     private static AsyncLocal<PerformingContext> _capturedContext;
 
-    public static PerformingContext ExecutingContext {
+    public static PerformingContext ExecutingContext
+    {
         get
         {
             return _capturedContext?.Value;
@@ -184,6 +185,7 @@ public class HangfireConsoleSink : ILogEventSink
         {
             _capturedContext = new AsyncLocal<PerformingContext> {Value = value};
         }
+   }
 
     /// <inheritdoc />
     public void Emit(LogEvent logEvent)
@@ -212,8 +214,21 @@ public class HangfireConsoleSink : ILogEventSink
 }
 ```
 
+To use it with the same extension method as before:
+
+```csharp
+public static class HangfireConsoleSinkExtensions
+{
+    public static ILogger CreateLoggerForPerformContext<T>(this PerformContext context)
+    {
+        HangfireConsoleSink.ExecutingContext = context;
+        return Log.ForContext<T>();
+    }
+}
+```
+
 The most interesting effect of this is that you don't need to use the Serilog context. Once you've set the `AsyncLocal`, you have the context automatically until the task execution ends.
 
 The second-most interesting effect is (this is the skycrane effect) - that it prevents you from adding stuff to your Serilog pipeline that interferes with the logical context of log writes.
 
-For example, adding an async wait period before flushing log entries would break this. Same if you try writing some buffering in the log stream in order to filter it based on later events. These are not big problems, but it seems that for every skycrane used, you get a couple of things like this that you have to be aware of, forever and forever in the future. Thats why it's usually considered 'inorganic' or 'hacky" - but if it fits your purpose, it may be the right way.
+For example, adding an async wait period before flushing log entries would break this. Same if you try writing some buffering in the log stream in order to filter it later. These are not big losses, but it seems that for every skycrane you get a couple of things like this that you have to be aware of, so be careful and document it. Thats why it's usually considered 'inorganic' or 'hacky" - but if it fits your purpose, it may be the right way.
