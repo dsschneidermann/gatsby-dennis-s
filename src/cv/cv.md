@@ -16,67 +16,67 @@ My current career goal:
 
 ### EXPERIENCE
 
-✔️ C<i>#</i> .NET: **9 years experience**
+:heavy_check_mark: C<i>#</i> .NET: **9 years experience**
 
-✔️ Azure / Web Services: **5 years**
+:heavy_check_mark: IoT / Big Data: **2 years**
 
-✔️ IoT / Big Data: **2 years**
+:heavy_check_mark: Architecture & Design: **5 years**
 
-✔️ Architecture & Design: **5 years**
+:heavy_check_mark: Azure / Web Services: **5 years**
 
 </div>
 <div>
 
 ### EXPERT LEVEL
-✔️ C<i>#</i>, .NET Core, SQL, Time Series Databases
+:star: C<i>#</i>, .NET Core, SQL, Time Series Data
 
-✔️ IoT and Big Data Architecture
+:star: IoT and Big Data Architecture
 
-✔️ SW Design Patterns
+:star: SW Design Patterns
 
-✔️ Azure Cloud
+:star: Azure Cloud
 
 </div>
 </div>
 <br>
 
-## 📝 Expertise
+## :pencil: Expertise
 
-✔️ <span class="highlightOrange">Expert level Development</span> C<i>#</i>, .NET Core, ASP .NET Core, LINQ, Rx, SQL for MSSQL and PostgreSQL, schema design, locks and use of isolation in distributed scenarios, database performance, versioning and more
+<span class="highlightOrange">Expert level Development</span> C<i>#</i>, .NET Core, ASP .NET Core, LINQ, Rx, SQL for MSSQL and PostgreSQL, schema design, locks and use of isolation in distributed scenarios, database performance, versioning and more
 
-✔️ <span class="highlightOrange">Expert level Cloud</span> IoT and IoT Edge architecture, Big Data architecture, Streaming Lambda/Kappa architectures, Event-driven architecture, Time Series databases, Web Services, REST, Microservices, DevOps and CI/CD
+<span class="highlightOrange">Expert level Cloud</span> IoT and IoT Edge architecture, Big Data architecture, Streaming Lambda/Kappa architectures, Event-driven architecture, Time Series databases, Web Services, REST, Microservices, DevOps and CI/CD
 
-✔️ <span class="highlightOrange">Expert level SW Design</span> Domain-Driven-Design, Test-Driven-Development, Behavior-Driven-Development, Actor-based Systems, Property/Model-based Testing, API Design, Functional programming, immutability, lock-free concurrency, policy-based resiliency
+<span class="highlightOrange">Expert level SW Design</span> Domain-Driven-Design, Test-Driven-Development, Behavior-Driven-Development, Actor-based Systems, Property/Model-based Testing, API Design, Functional programming, immutability, lock-free concurrency, policy-based resiliency
 
-✔️ <span class="highlightOrange">Expert level Technologies</span> Azure PaaS components, IoT Hub, Event Hub, IoT Edge SDK, CosmosDB, Logic Apps, Azure Stream Analytics, Azure Container Instances, Azure Kubernetes Service, Docker, Azure DevOps
+<span class="highlightOrange">Expert level Technologies</span> Azure PaaS components, IoT Hub, Event Hub, IoT Edge SDK, CosmosDB, Logic Apps, Azure Stream Analytics, Azure Container Instances, Azure Kubernetes Service, Docker, Azure DevOps
 
-## 🔨 Programming
+## :hammer: Programming
 
-Aside from C<i>#</i>, SQL and Javascript which are my commonly used languages, I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Elm, Go, Java and Elixir.
+C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Elm, Go, Java and Elixir.
 
-## 👓 Personal
+## :briefcase: Consulting
 
-✔️ Detail oriented, analytical
+Experienced in defining requirements in collaboration with business domain experts, Enterprise Architects and stakeholders
 
-✔️ Pragmatic and results driven
+Very experienced in documenting technical solution details, architecture and operational information
 
-✔️ Focus on communication and knowledge sharing
+## :iphone: Frontend
 
-## 💼 Consulting
+Experienced with HTML5, CSS3, Foundation, Bootstrap, less, sass, post-css, jQuery, CommonJS, Angular 2, React, D3.js graphs
 
-✔️ Experienced in defining requirements in collaboration with business domain experts, Enterprise Architects and stakeholders
+## :eyeglasses: Personal
 
-✔️ Very experienced in documenting technical solution details, architecture and operational information
+* Detail oriented, analytical
 
-## 📱 Frontend
+* Pragmatic and results driven
 
-✔️ Experienced with HTML5, CSS3, Foundation, Bootstrap, less, sass, post-css, jQuery, CommonJS, Angular 2, React, D3.js graphs
+* Focus on clear communication and knowledge sharing
 
 <br>
 
 ## **DETAILED COMPETENCIES**
 
-## ☕️ Intro
+## :coffee: Intro
 
 <div class="cvIntro">
 <div>
@@ -96,7 +96,7 @@ As a consultant, I strive to keep a broad base of knowledge updated with the lat
 </div>
 <br>
 
-## 💬 Work Experience
+## :speech_balloon: Work Experience
 
 <div class="cvProject">
 
@@ -264,7 +264,7 @@ Responsibilities/actions:
 </div>
 <br>
 
-## 🏢 Work places
+## :office: Work places
 
 | Place of work / title                                                 | Years       |
 | --------------------------------------------------------------------- | ----------- |
@@ -274,7 +274,7 @@ Responsibilities/actions:
 | **Nordic Insurance Software** <br> Software Developer / Enterprise SW | 2013 - 2015 |
 | **Toolpack Business Intelligence** <br> Software Developer            | 2011 - 2013 |
 
-## 📚 Education
+## :books: Education
 
 ### Bachelor Computer Science - University of Copenhagen
 

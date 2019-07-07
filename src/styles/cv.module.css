@@ -5,6 +5,8 @@
   padding: 20px;
   margin: 0 auto 20px;
 
+  font-feature-settings: normal;
+
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--light-border-color);
 
@@ -23,6 +25,12 @@
 
   img {
     border-radius: 8px;
+  }
+
+  table {
+    @media (--phone) {
+      font-size: x-small;
+    }
   }
 }
 
@@ -59,6 +67,9 @@
   padding: 15px 15px 3px 15px;
 
   display: flex;
+  @media (--phone) {
+    flex-direction: column;
+  }
 
   h1, h2, h3 {
     margin-top: 0px;
@@ -75,13 +86,16 @@
 
 .cvIntro {
   display: flex;
+  @media (--phone) {
+    flex-direction: column;
+  }
 
   &>div {
     background: var(--light-underlay-color);
     border-radius: 10px;
     flex: 1;
 
-    margin: 0 5px 0 5px;
+    margin: 0 5px 2px 5px;
     padding: 0 10px 0 10px;
 
     :global .dark-theme :local & {
