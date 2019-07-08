@@ -1,0 +1,23 @@
+
+.gatsby-highlight-code-line {
+  background-color: #2a2a2a;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+
+/**
+ * If you already use line highlighting
+ */
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"] .line-numbers-rows {
+  padding-left: 0.8em;
+}
+
+pre[class*=language-].line-numbers {
+	padding-left: 4.5em !important;
+}

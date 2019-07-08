@@ -39,7 +39,7 @@ Serilog can't do this with only configuration, so we have to add a bit of code. 
 
 # Flowing objects through Serilog context
 
-One package I found related to this (and would make it very easy) is Serilog.Sinks.Map ([github](https://github.com/serilog/serilog-sinks-map)). It can take, say, a filename and write to it: ```lc.WriteTo.Map("Name", "Other", (name, wt) => wt.File($"./logs/log-{name}.txt"))```. However, it can only pull *strings* out of the Serilog properties.
+One package I found related to this (and would make it very easy) is Serilog.Sinks.Map ([github](https://github.com/serilog/serilog-sinks-map)). It can take, say, a filename and write to it: `lc.WriteTo.Map("Name", "Other", (name, wt) => wt.File($"./logs/log-{name}.txt"))`. However, it can only pull *strings* out of the Serilog properties.
 
 That's not the fault of Serilog.Sinks.Map. Objects given as properties are converted to a string representation and we can't go back to the original reference after. This makes sense for Serilog as it has to be concerned about objects changing or getting disposed before log output happens.
 
@@ -49,7 +49,7 @@ The solution is to write an Enricher (`ILogEventEnricher`) and use a custom `Log
 
 Our new internal classes for Serilog to use:
 
-```csharp
+```csharp{4,18,24,25,26}
 internal class PerformContextValue : LogEventPropertyValue
 {
     // The context attached to this property value
@@ -83,7 +83,7 @@ internal class HangfireConsoleSerilogEnricher : ILogEventEnricher
 
 The Serilog sink has to be written to only handle our own log events, those that are enriched with the "PerformContext" property:
 
-```csharp
+```csharp{10,13}
 public class HangfireConsoleSink : ILogEventSink
 {
     /// <inheritdoc />
@@ -134,7 +134,7 @@ Log.Logger = new LoggerConfiguration()
 
 Using an extension method for converting a context to a logger:
 
-```csharp
+```csharp{6}
 public static class HangfireConsoleSinkExtensions
 {
     public static ILogger CreateLoggerForPerformContext<T>(this PerformContext context)
@@ -207,7 +207,7 @@ public class HangfireConsoleSink : ILogEventSink
 
 To use it, just set the `static AsyncLocal<T>` once when a job starts:
 
-```csharp
+```csharp{3}
 private async Task RunAsync(PerformContext context)
 {
     AsyncPerformContext.ExecutingContext = context;
