@@ -22,7 +22,7 @@ My current career goal:
 
 :heavy_check_mark: IoT / Big Data: **2 years**
 
-:heavy_check_mark: Azure / Web Services: **5 years**
+:heavy_check_mark: Azure / Web Services: **4 years**
 
 </div>
 <div>
@@ -115,13 +115,13 @@ Responsibilities/actions:
 
 ### Nov 2018 - ongoing, IoT Modular Components
 
-Working on IoT modular components in parallel to projects for clients.
+Creating IoT modular components in parallel to projects for clients.
 
 Responsibilities/actions:
 - Implemented a general data collection component in .NET that is able to dynamically group and process signals according to user-defined rules.
 - Ingressing data via Azure IoT Hub and landing in a highly optimized time-series database, using continuous aggregation to achieve sub-100ms query performance for any range and amount of data.
 - Deployment to Kubernetes and as Edge modules on Azure IoT Edge.
-- Technologies used: <span class="highlightBlue">*Azure IoT Hub, ASP .NET Core, C#, Microsoft Trill, Azure IoT Edge SDK, Grafana, C# Rx, Azure Kubernetes Service, Docker, Test Driven Development, FsCheck*</span>
+- Technologies used: <span class="highlightBlue">*Azure IoT Hub, ASP .NET Core, C#, Microsoft Trill, Azure IoT Edge SDK, Grafana, C# Rx, Azure Kubernetes Service, Docker, TDD, FsCheck*</span>
 
 </div>
 <div class="cvProject">
@@ -172,7 +172,7 @@ Architect and lead developer for an Azure IoT Management Platform in .NET.
 Responsibilities/actions:
 - Implementing an Industrial IoT solution based on Microsoft Azure IoT Suite, that collects data from +20 sensors per second for each device via a Schneider PLC to the cloud.
 - Extending the Azure IoT Suite front-end solution to support multi-tenancy and be the point of entry for administration and device overview.
-- Technologies used: <span class="highlightBlue">*Azure IoT Hub, Azure DevOps CI/CD, C#, Azure Stream Analytics, Azure CosmosDB, ASP .NET, Web Services, Azure Resource Manager (ARM), D3.js graph, Javascript*</span>
+- Technologies used: <span class="highlightBlue">*Azure IoT Hub, Azure DevOps CI/CD, C#, Azure Stream Analytics, Azure CosmosDB, ASP .NET, Web Services, Azure Resource Manager (ARM), D3.js, Javascript*</span>
 
 </div>
 <div class="cvProject">
@@ -198,7 +198,7 @@ Responsibilities/actions:
 - Implementing an ASP .NET framework solution for the client's back-end REST services, able to drive an API platform for multi-channel marketing to customers.
 - Responsible for estimating, designing and leading the implementation of two highly complex REST services on SQL datastores in a high load-spiking environment.
 - Advisory role for the system architecture in collaboration with Enterprise Architects and supported the client's Azure API-Management setup.
-- Technologies used: <span class="highlightBlue">*C#, ASP .NET, Web Services, REST, OAuth, Specflow, MSSQL, Entity Framework, Test Driven Development*</span>
+- Technologies used: <span class="highlightBlue">*C#, ASP .NET, REST, OAuth, Specflow, MSSQL, Entity Framework, TDD*</span>
 
 </div>
 <div class="cvProject">
@@ -210,7 +210,7 @@ Web Development, DevOps, .NET and front-end.
 Responsibilities/actions:
 - Implementing a CI/CD front-end development workflow and build system for the company's Sitecore CMS solutions.
 - Used Node.js and the latest technologies for front-end development to create a setup that was flexible enough for the company to continue evolving many global marketing sites.
-- Technologies used: <span class="highlightBlue">*Node.js, Gulp, Webpack, Sitecore, HTML5, CSS3*</span>
+- Technologies used: <span class="highlightBlue">*Node.js, Gulp, Webpack, Sitecore, HTML5, CSS3, Javascript*</span>
 
 </div>
 <div class="cvProject">
@@ -223,7 +223,7 @@ Responsibilities/actions:
 - As part of an 8-person agile team, implemented ASP .NET EpiServer CMS back-end for customer-facing websites.
 - Implemented e-commerce flows and PIM catalogue and content search using custom written ElasticSearch queries.
 - Some Scrum Master and team management responsibilities.
-- Technologies used: <span class="highlightBlue">*C#, ASP .NET, ElasticSearch, EpiServer, HTML5, JSON-LD*</span>
+- Technologies used: <span class="highlightBlue">*C#, ASP .NET, ElasticSearch, EpiServer, HTML5, CSS3, Javascript, JSON-LD*</span>
 
 </div>
 <div class="cvProject">
@@ -241,9 +241,9 @@ Responsibilities/actions:
 </div>
 <div class="cvProject">
 
-### 2011 – Jan 2013, Toolpack
+### 2011 – Jan 2013, Toolpack Solutions
 
-Business Intelligence Solutions development.
+Business Intelligence development.
 
 Responsibilities/actions:
 - Application coding in .NET for BI solutions for financial reporting purposes, and was responsible for creating both requirements and system architecture of new development projects.
@@ -253,7 +253,7 @@ Responsibilities/actions:
 </div>
 <div class="cvProject">
 
-### 2008 – 2009, Øresundsbroen
+### 2008 – 2009, Øresund Bridge
 
 Studying Computer Science and working a period for Accit Aps, a small consultancy company with expertise in MS Access and Windows applications.
 
@@ -284,40 +284,52 @@ Finished 2010, after taking an extra year of Master classes. Topics covered were
 
 ## Competencies tables
 
-| Competence                   | Years of experience | Last used | Level            |
-| ---------------------------- | ------------------- | --------- | ---------------- |
-| Agile Methods                | 5             | 2019     | Very experienced |
-| Backend                      | 5             | 2019     | Expert           |
-| Cloud                        | 5             | 2019     | Expert           |
-| DevOps                       | 4           | 2019     | Very experienced |
-| Frontend                     | 2                   | 2018      | Experienced      |
-| Infrastructure               | 4           | 2019     | Experienced      |
-| Microservices                | 3           | 2019     | Experienced      |
-| Scrum                        | 1                   | 2016      | Experienced      |
-| Security                     | 4           | 2019     | Experienced      |
-| SOA                          | 5             | 2019     | Very experienced |
-| System Architecture          | 5             | 2019     | Expert           |
-| System Development           | 9        | 2019     | Expert           |
-| System monitoring            | 2           | 2019     | Experienced      |
-| The Internet of Things (IoT) | 2           | 2019     | Very experienced |
-| Web Services                 | 5             | 2019     | Expert           |
+| Category     | Competence                    | Years of experience   | Last used | Level            |
+| ------------ | ----------------------------- | --------------------- | --------- | ---------------- |
+| Working area | Agile Methods                 | 5                     | 2019     | Very experienced |
+| Working area | Architecture                  | 5                     | 2019     | Expert           |
+| Working area | Backend                       | 9                     | 2019     | Expert           |
+| Working area | Big Data                      | 1                     | 2019     | Experienced      |
+| Working area | Cloud                         | 4                     | 2019     | Expert           |
+| Working area | Data Science                  | 1                     | 2019     | Experienced      |
+| Working area | Database Development          | 5                     | 2019     | Very experienced |
+| Working area | Development                   | 9                     | 2019     | Expert           |
+| Working area | DevOps                        | 2                     | 2018      | Experienced      |
+| Working area | Frontend                      | 2                     | 2018      | Experienced      |
+| Working area | Infrastructure                | 3                     | 2019     | Very experienced |
+| Working area | IT Security                   | 3                     | 2019     | Experienced      |
+| Working area | Microservices                 | 2                     | 2018      | Experienced      |
+| Working area | Migration                     | 1                     | 2019     | Some knowledge   |
+| Working area | Quality Assurance (QA)        | 1                     | 2019     | Some knowledge   |
+| Working area | SOA                           | 5                     | 2019     | Expert           |
+| Working area | Team Lead                     | 2                     | 2017      | Experienced      |
+| Working area | Test-driven Development (TDD) | 2                     | 2019     | Very experienced |
+| Working area | The Internet of Things (IoT)  | 2                     | 2019     | Expert           |
+| Working area | Web Services                  | 5                     | 2019     | Expert           |
 
-| Category          | Competence                       | Years of experience | Last used | Level            |
-| ----------------- | -------------------------------- | ------------------- | --------- | ---------------- |
-| Languages         | C# (C-Sharp)                     | 9        | 2019     | Expert           |
-| Languages         | HTML5                            | 2                   | 2018      | Good knowledge   |
-| Technologies      | .NET                             | 9        | 2019     | Expert           |
-| Technologies      | ASP .NET                          | 5             | 2019     | Expert           |
-| Technologies      | CSS 3 (Cascading Style Sheets)   | 2                   | 2018      | Good knowledge   |
-| Technologies      | Microsoft Azure Active Directory | 1           | 2019     | Good knowledge   |
-| Technologies      | OAuth2 (Open Authorization)      | 1                   | 2018      | Very experienced |
-| Technologies      | Swagger                          | 3           | 2019     | Very experienced |
-| Platforms         | Microsoft Azure                  | 5             | 2019     | Expert           |
-| Platforms         | Microsoft Azure DevOps           | 4           | 2019     | Very experienced |
-| Development tools | Docker                           | 2           | 2019     | Experienced      |
-| Development tools | Kubernetes (K8s)                 | 2           | 2019     | Experienced      |
-| Development tools | Node.js                          | 1                   | 2018      | Good knowledge   |
-| Methods           | Continuous Delivery (CD)         | 4           | 2019     | Very experienced |
-| Methods           | Continuous Integration           | 4           | 2019     | Very experienced |
-| Methods           | Distributed computing            | 1           | 2019     | Good knowledge   |
-| Methods           | OData (Open Data Protocol)       | 2                   | 2017      | Very experienced |
+| Category          | Competence                     | Years of experience   | Last used | Level            |
+| ----------------- | ------------------------------ | --------------------- | --------- | ---------------- |
+| Languages         | C# (C-Sharp)                   | 9                     | 2019     | Expert           |
+| Languages         | HTML5                          | 2                     | 2018      | Experienced      |
+| Languages         | JavaScript                     | 2                     | 2019     | Experienced      |
+| Languages         | SQL                            | 5                     | 2019     | Very experienced |
+| Technologies      | .NET                           | 9                     | 2019     | Expert           |
+| Technologies      | .NET Core                      | 1                     | 2019     | Expert           |
+| Technologies      | ASP.NET                        | 5                     | 2019     | Expert           |
+| Technologies      | ASP.NET Web API                | 5                     | 2019     | Expert           |
+| Technologies      | CSS 3 (Cascading Style Sheets) | 2                     | 2019     | Experienced      |
+| Technologies      | OAuth2 (Open Authorization)    | 1                     | 2017      | Experienced      |
+| Technologies      | SOLID (object-oriented design) | 2                     | 2017      | Experienced      |
+| Technologies      | Swagger                        | 3                     | 2019     | Very experienced |
+| Platforms         | ASP.NET Core                   | 1                     | 2019     | Expert           |
+| Platforms         | Microsoft Azure                | 5                     | 2019     | Expert           |
+| Platforms         | Microsoft Azure DevOps         | 4                     | 2019     | Very experienced |
+| Development tools | Docker                         | 1                     | 2019     | Experienced      |
+| Development tools | Kubernetes (K8s)               | 1                     | 2019     | Experienced      |
+| Development tools | Node.js                        | 1                     | 2018      | Good knowledge   |
+| Methods           | Continuous Delivery (CD)       | 2                     | 2019     | Experienced      |
+| Methods           | Continuous Integration         | 2                     | 2019     | Experienced      |
+| Methods           | Distributed computing          | 1                     | 2019     | Good knowledge   |
+| Methods           | Domain-driven design (DDD)     | 1                     | 2017      | Good knowledge   |
+| Methods           | OData (Open Data Protocol)     | 2                     | 2017      | Very experienced |
+| Methods           | Scrum                          | 1                     | 2019     | Some knowledge   |
