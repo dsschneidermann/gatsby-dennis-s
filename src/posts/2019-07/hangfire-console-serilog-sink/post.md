@@ -3,7 +3,7 @@ title: Writing a Serilog Sink to dump logs into Hangfire Console
 date: 2019-07-07
 path: /2019-07/hangfire-console-serilog-sink
 author: Dennis
-excerpt: ""
+excerpt: ''
 tags: [csharp, aspnetcore, hangfire, serilog]
 coverImage: cover.png
 ---
