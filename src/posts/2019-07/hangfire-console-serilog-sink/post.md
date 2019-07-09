@@ -37,7 +37,7 @@ private async Task RunAsync(PerformContext context)
 
 Serilog can't do this with only configuration, so we have to add a bit of code. I am going to show a couple of ways to do this.
 
-# Flowing objects through Serilog context
+## Flowing objects through Serilog context
 
 One package I found related to this (and would make it very easy) is Serilog.Sinks.Map ([github](https://github.com/serilog/serilog-sinks-map)). It can take, say, a filename and write to it: `lc.WriteTo.Map("Name", "Other", (name, wt) => wt.File($"./logs/log-{name}.txt"))`. However, it can only pull *strings* out of the Serilog properties.
 
@@ -45,7 +45,7 @@ That's not the fault of Serilog.Sinks.Map. Objects given as properties are conve
 
 The solution is to write an Enricher (`ILogEventEnricher`) and use a custom `LogEventPropertyValue` to keep track of our object reference.
 
-## A bunch of code
+### A bunch of code
 
 Our new internal classes for Serilog to use:
 
@@ -130,7 +130,7 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 ```
 
-## Usage from job code
+### Usage from job code
 
 Using an extension method for converting a context to a logger:
 
@@ -159,12 +159,12 @@ private async Task RunAsync(PerformContext context)
 }
 ```
 
-## Result
+### Result
 
 The result's that the job will now pick up whatever is written to the logger and display it as formatted by Serilog:
 ![](2.png "My result.")
 
-# Alternative Skycrane
+## Alternative Skycrane
 
 The second way I want to show is a skycrane solution. I didn't end up using it, but it should be considered.
 
@@ -219,7 +219,7 @@ private async Task RunAsync(PerformContext context)
 
 The most interesting effect is that we don't need to pass the logger instance around. Once we've set the `AsyncLocal<T>`, our sink will have the context automatically until the task ends.
 
-## Making it a part of every job
+### Making it a part of every job
 
 Hangfire lets us have a way to hook into the job execution process, so we don't even need that first line of code in our job:
 
@@ -257,6 +257,6 @@ services.AddHangfire(config =>
         config.UseFilter(new PerformContextCaptureFilter());
 ```
 
-## Caveat
+### Caveat
 
 Be aware that this method prevents us from adding stuff to our Serilog pipeline that can interfere with the immediate nature of writes, like using the package Serilog.Sinks.Async ([github](https://github.com/serilog/serilog-sinks-async)) or any of the packages that log to online services... In this case it's not a problem, but for other usages of `AsyncLocal<T>` and Serilog, keep it in mind.
