@@ -20,7 +20,7 @@ var stats = await registry.GetRegistryStatisticsAsync(cancellationToken);
 return stats.EnabledDeviceCount;
 ```
 
-This is equivalent to querying and counting the amount of devices that have the `State` property set to `enabled`, but doesn't tell us anything about the devices activity. I use this operation just for health-checking the status of an IoT Hub.
+This is equivalent to querying and counting the amount of devices that have the `State` property set to `enabled`, but doesn't tell us anything about the devices activity. I usually only use this operation for health-checking the status of an IoT Hub.
 
 ## Enumerating IoT Hub devices with queries
 
@@ -48,6 +48,8 @@ namespace iothubapi.Iothub
             Registry = RegistryManager.CreateFromConnectionString(builder.ToString());
         }
 
+        public RegistryManager Registry { get; }
+
         // ... methods implemented here
     }
 
@@ -59,7 +61,9 @@ namespace iothubapi.Iothub
 
 Lets have a method to get any number of device Twins from the IoT Hub.
 
-```csharp
+We'll use the Json returning method `GetNextAsJsonAsync` and parse the result with the built-in `TwinJsonConverter` so that we limit the amount of bytes to transfer, as twins can get large if they have update history. It means that we won't get any properties in the resulting `Twin` other than what we specified in the query.
+
+```csharp{21,30-32}
 /// <summary>
 ///     Get twin result by query.
 /// </summary>
@@ -72,37 +76,35 @@ private async Task<ResultWithContinuationToken<List<Twin>>> GetTwinsByQueryAsync
     string query, string continuationToken, int numberOfResults, CancellationToken ct)
 {
     var twins = new List<Twin>();
-    var twinQuery = Registry.CreateQuery(query);
+    var twinQ = Registry.CreateQuery(query);
 
     var options = new QueryOptions {ContinuationToken = continuationToken};
 
-    while (twinQuery.HasMoreResults && numberOfResults == -1 || twins.Count < numberOfResults)
+    while (twinQ.HasMoreResults && numberOfResults == -1 || twins.Count < numberOfResults)
     {
         ct.ThrowIfCancellationRequested();
 
-        var response = await twinQuery.GetNextAsJsonAsync(options);
+        var response = await twinQ.GetNextAsJsonAsync(options);
         options.ContinuationToken = response.ContinuationToken;
 
         var convert = new TwinJsonConverter();
+        var jsonSer = JsonSerializer.CreateDefault();
         twins.AddRange(
-            response.Select(
-                    x => {
-                        using (var reader = new JsonTextReader(new StringReader(x)))
-                        {
-                            return reader.Read()
-                                ? convert.ReadJson(reader, typeof(Twin), null,
-                                    JsonSerializer.CreateDefault())
-                                : null;
-                        }
+            response.Select(x => {
+                    using (var reader = new JsonTextReader(new StringReader(x)))
+                    {
+                        return reader.Read()
+                            ? convert.ReadJson(reader, typeof(Twin), null, jsonSer)
+                            : null;
                     }
-                )
+                })
                 .Where(x => x != null)
                 .Cast<Twin>()
         );
     }
 
     return new ResultWithContinuationToken<List<Twin>>(
-        twins, twinQuery.HasMoreResults ? options.ContinuationToken : null
+        twins, twinQ.HasMoreResults ? options.ContinuationToken : null
     );
 }
 
@@ -119,23 +121,25 @@ private class ResultWithContinuationToken<T>
 }
 ```
 
-Note that we use the Json parsing `TwinJsonConverter` in order to limit the amount of bytes to download as twins can get rather large. Using this method with a query and count:
+And using this method with a query and count:
 
 ```csharp
 var connectedQuery = "SELECT deviceId FROM devices WHERE connectionState = 'Connected'";
 var twins = await GetTwinsByQueryAsync(connectedQuery, null, -1, cancellationToken);
 
-// twins.Result is a list of Twin objects with only 'deviceId' set
+// twins.Result is a list of Twin objects with only the 'DeviceId' set.
 return twins.Result.Count;
 ```
 
-That works to query devices by the current connectionState. However, the documentation [states](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-identity-registry#device-heartbeat):
+To get the full `Twin` object, we can just replace `SELECT deviceId` with `SELECT *`.
+
+So that works to query devices by the current connectionState. However, the [documentation states](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-identity-registry#device-heartbeat):
 
 > The IoT Hub identity registry contains a field called connectionState. **Only use the connectionState field during development and debugging**. IoT solutions should not query the field at run time. For example, do not query the connectionState field to check if a device is connected before you send a cloud-to-device message or an SMS. 
 
-So the query above is not the suggested way. Instead, the suggested way is to implement heartbeat messages, empty data messages from the devices that are sent with known regularity, and maintain a list of which devices are connected by subscribing to the message stream.
+So the query above is not the suggested way. Instead, the suggested way is to implement heartbeat messages (empty data messages from the devices that are sent with known regularity), and maintain a list of which devices are connected by subscribing to the message stream.
 
-We're going to use the device registry instead, as it keeps track of the `lastActivityTime` property, and we can use it to determine which devices have sent data. Let's write the simplest query that does that.
+We're going to use the device registry instead, as it keeps track of the `lastActivityTime` property for us, and we can use it to determine which devices have sent data. Let's write the simplest query that does that.
 
 ```csharp
 var activeSinceTime = TimeSpan.FromHours(1);
@@ -149,13 +153,17 @@ var twins = await GetTwinsByQueryAsync(activityQuery, null, -1, cancellationToke
 return twins.Result.Count;
 ```
 
-This works for devices that are implemented using the IoT Hub SDK to send data.
+This works for devices that are using the IoT Hub SDK to send messages.
 
 ## Azure IoT Edge device activity
 
 IoT Edge modules have their own identities with separate twins from the parent devices. The device twin is therefore not updated with the activity from any of the modules. To account for this, we have to do some more work.
 
-We're going to write a general method in our `IothubManager` class so that devices along with their latest activity are returned whether they are Edge devices or not, and we're going to allow the user of the method to query by specific module name or restrict the query by passing `lastActivityTime >= ...` like we did before.
+We're going to write a general method in our `IothubManager` class so that devices along with their latest activity are returned whether they are Edge devices or not.
+
+We're also going to allow the user of the method to query by specific module name or restrict the query by passing `lastActivityTime >= ...` like we did above.
+
+Let's get to it:
 
 ```csharp
 // Queries to selects only the properties we need from twins
@@ -168,46 +176,33 @@ private const string MODULE_QUERY_PREFIX =
 private const string DEVICE_ENABLED_QUERY = "status = 'enabled'";
 private const string MODULE_ACTIVE_QUERY = "lastActivityTime > '0001-01-01T00:00:00'";
 
-// Get IoT Edge devices with their latest module active time
-private async Task<Dictionary<string, Twin>> GetEdgeDevicesWithLatestActiveModule(
-    string moduleQuery, CancellationToken ct)
-{
-    var queryActiveModulesOnly = CombinedQuery(moduleQuery, MODULE_ACTIVE_QUERY);
-    var twinQuery = $"{MODULE_QUERY_PREFIX} WHERE {queryActiveModulesOnly}";
-
-    var twins = await GetTwinsByQueryAsync(twinQuery, null, -1, ct);
-
-    return twins.Result.GroupBy(x => x.DeviceId)
-        .Select(g => g.OrderByDescending(x => x.LastActivityTime).First())
-        .ToDictionary(x => x.DeviceId, x => x);
-}
-
-// From the list of given device twins, get the ones that that identify having the IoT Edge capability
-private async Task<Dictionary<string, (Twin Twin, Twin LastActiveModule)>> GetEdgeDevices(
-    string moduleQuery, IEnumerable<Twin> deviceTwins, CancellationToken ct)
-{
-    var devicesWithModuleActivity = await GetEdgeDevicesWithLatestActiveModule(moduleQuery, ct);
-
-    return deviceTwins.Where(twin => twin.Capabilities?.IotEdge ?? false)
-        .Join(
-            devicesWithModuleActivity, x => x.DeviceId, x => x.Key,
-            (twin, pair) => (pair.Key, Twin: twin, ModuleTwin: pair.Value)
-        )
-        .ToDictionary(x => x.Key, x => (x.Twin, x.ModuleTwin));
-}
-
-// Our public method to get devices, both IoT Edge and normal devices, along with their LatestActivity
-public async Task<List<TwinActivity>> GetDevicesAsync(
-    string deviceQuery = null, string moduleQuery = null, CancellationToken cancellationToken = default)
+/// <summary>
+///     Query enabled device and modules for activity.
+/// </summary>
+/// <param name="deviceQuery">
+///     The "Where" clause of official IoTHub query string, without "Where".
+/// </param>
+/// <param name="moduleQuery">
+///     The "Where" clause of a module query string, devices without hits will not be returned as
+///     Edge devices.
+/// </param>
+/// <param name="ct">Cancellation token</param>
+/// <returns>List of devices with LatestActivity</returns>
+public async Task<List<TwinActivity>> GetDeviceActivityAsync(
+    string deviceQuery = null, string moduleQuery = null, CancellationToken ct = default)
 {
     var queryEnabledOnly = CombinedQuery(deviceQuery, DEVICE_ENABLED_QUERY);
-    var twinQuery = $"{QUERY_PREFIX} WHERE {queryEnabledOnly}";
+    var dQuery = $"{QUERY_PREFIX} WHERE {queryEnabledOnly}";
+    var devices = await GetTwinsByQueryAsync(dQuery, null, -1, ct);
 
-    var twins = await GetTwinsByQueryAsync(twinQuery, null, -1, cancellationToken);
+    var queryActiveModulesOnly = CombinedQuery(moduleQuery, MODULE_ACTIVE_QUERY);
+    var mQuery = $"{MODULE_QUERY_PREFIX} WHERE {queryActiveModulesOnly}";
+    var modules = await GetTwinsByQueryAsync(mQuery, null, -1, ct);
 
-    var edgeDevices = await GetEdgeDevices(moduleQuery, twins.Result, cancellationToken);
+    var edgeDevices = GetEdgeDevices(devices.Result, modules.Result);
 
-    return twins.Result.Select(
+    // Combine results from Edge devices and normal devices.
+    return devices.Result.Select(
             twin => {
                 var foundEdgeModule = edgeDevices.TryGetValue(twin.DeviceId, out var edgeDevice);
                 return new TwinActivity
@@ -223,6 +218,23 @@ public async Task<List<TwinActivity>> GetDevicesAsync(
         .ToList();
 }
 
+/// <summary>
+/// From the lists of given device and module twins, get the ones that that identify having IoT Edge capability
+/// and return the device and the last active module for that device.
+/// </summary>
+private static Dictionary<string, (Twin Twin, Twin LastActiveModule)>
+    GetEdgeDevices(IEnumerable<Twin> deviceTwins, IEnumerable<Twin> moduleTwins)
+{
+    var devicesWithModuleActivity = moduleTwins.GroupBy(x => x.DeviceId)
+        .Select(g => g.OrderByDescending(x => x.LastActivityTime).First())
+        .ToDictionary(x => x.DeviceId, x => x);
+
+    return deviceTwins.Where(twin => twin.Capabilities?.IotEdge ?? false)
+        .Join(devicesWithModuleActivity, x => x.DeviceId, x => x.Key,
+            (twin, pair) => (pair.Key, Twin: twin, ModuleTwin: pair.Value))
+        .ToDictionary(x => x.Key, x => (x.Twin, x.ModuleTwin));
+}
+
 // Helper method to combine query constraints with "AND"
 private static string CombinedQuery(params string[] queries) =>
     string.Join(" AND ", queries.Where(x => !string.IsNullOrEmpty(x)).ToArray());
@@ -236,7 +248,7 @@ public class TwinActivity
 }
 ```
 
-The method can be used like before, but can take a device query and a module query and will restrict on both:
+The `GetDeviceActivityAsync` method can take a device query and a module query and will restrict on both:
 
 ```csharp
 var activeSinceTime = TimeSpan.FromHours(1);
@@ -248,7 +260,7 @@ var moduleQuery = $"lastActivityTime >= '{activityAfter:yyyy-MM-ddTHH:mm:ssZ}'";
 // Restrict devices by tag
 var deviceQuery = $"tags.environment = 'production'";
 
-var twins = await GetDevicesAsync(deviceQuery, moduleQuery);
+var twins = await GetDeviceActivityAsync(deviceQuery, moduleQuery);
 
 // Let's count only IoT Edge devices:
 return twins.Where(x => x.IsEdgeDevice).Count();
