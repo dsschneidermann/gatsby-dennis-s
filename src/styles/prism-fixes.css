@@ -1,23 +1,55 @@
 
-.gatsby-highlight-code-line {
-  background-color: #2a2a2a;
-  display: block;
-  margin-right: -1em;
-  margin-left: -1em;
-  padding-right: 1em;
-  padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
-}
+.gatsby-highlight {
 
-/**
- * If you already use line highlighting
- */
+  .gatsby-highlight-code-line {
+    background-color: #2a2a2a;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
 
-/* Adjust the position of the line numbers */
-.gatsby-highlight pre[class*="language-"] .line-numbers-rows {
-  padding-left: 0.8em;
-}
+  /**
+  * If you already use line highlighting
+  */
 
-pre[class*=language-].line-numbers {
-	padding-left: 4.5em !important;
+  /* Adjust the position of the line numbers */
+  pre[class*="language-"] .line-numbers-rows {
+    padding-left: 0.8em;
+  }
+
+  pre[class*=language-].line-numbers {
+    padding-left: 4.5em !important;
+  }
+
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--light-background-secondary);
+    border-radius: 0.5rem;
+    .dark-theme & {
+      background: var(--dark-background-secondary);
+    }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background: var(--light-color-secondary);
+    .dark-theme & {
+      background: var(--dark-color-secondary);
+    }
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-underlay-color);
+    .dark-theme & {
+      background: var(--dark-underlay-color);
+    }
+  }
 }
