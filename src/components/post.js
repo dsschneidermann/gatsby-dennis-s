@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import Navigation from './navigation'
 import { toKebabCase } from '../helpers'
+import ReactDisqusComments from 'react-disqus-comments'
+import LazyLoad from 'react-lazy-load'
 
 import style from '../styles/post.module.css'
 
@@ -19,10 +21,11 @@ const Post = ({
   previousPost,
   nextPost,
 }) => {
-  const previousPath = previousPost && previousPost.frontmatter.path
-  const previousLabel = previousPost && previousPost.frontmatter.title
-  const nextPath = nextPost && nextPost.frontmatter.path
-  const nextLabel = nextPost && nextPost.frontmatter.title
+  // For some reason, gatsby gets this in reverse
+  const previousPath = nextPost && nextPost.frontmatter.path
+  const previousLabel = nextPost && nextPost.frontmatter.title
+  const nextPath = previousPost && previousPost.frontmatter.path
+  const nextLabel = previousPost && previousPost.frontmatter.title
 
   return (
     <div className={style.post}>
@@ -67,6 +70,14 @@ const Post = ({
               nextPath={nextPath}
               nextLabel={nextLabel}
             />
+            <LazyLoad>
+              <ReactDisqusComments
+                  shortname="dennis-s-dk"
+                  identifier={path}
+                  title={title.substr(0, 200)}
+                  url={"https://www.dennis-s.dk" + path}
+              />
+            </LazyLoad>
           </>
         )}
       </div>
