@@ -50,28 +50,6 @@ My current career goal:
 
 <span class="highlightOrange">Expert level Technologies</span> Azure PaaS components, IoT Hub, Event Hub, IoT Edge SDK, CosmosDB, Logic Apps, Azure Stream Analytics, Azure Container Instances, Azure Kubernetes Service, Docker, Azure DevOps
 
-## :hammer: Programming
-
-C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Elm, Go and Java
-
-## :briefcase: Consulting
-
-Experienced in defining requirements in collaboration with business domain experts, Enterprise Architects and stakeholders
-
-Very experienced in documenting technical solution details, architecture and operational information
-
-## :iphone: Frontend
-
-Experienced with HTML5, CSS3, Foundation, Bootstrap, less, sass, post-css, jQuery, CommonJS, Angular 2, React, D3.js graphs
-
-## :eyeglasses: Personal
-
-* Detail oriented, analytical
-
-* Pragmatic and results driven
-
-* Focus on clear communication and knowledge sharing
-
 <br>
 
 ## **DETAILED COMPETENCIES**
@@ -276,60 +254,28 @@ Responsibilities/actions:
 
 ## :books: Education
 
-### Bachelor Computer Science - University of Copenhagen
+### Bachelor Computer Science, University of Copenhagen
 
-Finished 2010, after taking an extra year of Master classes. Topics covered were compiler and language design, functional programming, concurrency, data structures and algorithms. Bachelor project was about simulation of various scheduling strategies for a specific protein-unfolding algorithm on the PlayStation 3 multi-processor, proud of received grade: A.
+Finished 2010, after taking an extra year of Master classes. Topics covered were compiler and language design, functional programming, concurrency, data structures and algorithms. Bachelor project was about simulation and analysis of scheduling strategies for a specific protein-unfolding algorithm on the PlayStation 3 multi-processor, which I am proud to have received the grade A for.
 
-<br>
+## :hammer: Programming
 
-## Competencies tables
+C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Elm, Go and Java
 
-| Category     | Competence                    | Years of experience   | Last used | Level            |
-| ------------ | ----------------------------- | --------------------- | --------- | ---------------- |
-| Working area | Agile Methods                 | 5                     | 2019     | Very experienced |
-| Working area | Architecture                  | 5                     | 2019     | Expert           |
-| Working area | Backend                       | 9                     | 2019     | Expert           |
-| Working area | Big Data                      | 1                     | 2019     | Experienced      |
-| Working area | Cloud                         | 4                     | 2019     | Expert           |
-| Working area | Data Science                  | 1                     | 2019     | Experienced      |
-| Working area | Database Development          | 5                     | 2019     | Very experienced |
-| Working area | Development                   | 9                     | 2019     | Expert           |
-| Working area | DevOps                        | 2                     | 2018      | Experienced      |
-| Working area | Frontend                      | 2                     | 2018      | Experienced      |
-| Working area | Infrastructure                | 3                     | 2019     | Very experienced |
-| Working area | IT Security                   | 3                     | 2019     | Experienced      |
-| Working area | Microservices                 | 2                     | 2018      | Experienced      |
-| Working area | Migration                     | 1                     | 2019     | Some knowledge   |
-| Working area | Quality Assurance (QA)        | 1                     | 2019     | Some knowledge   |
-| Working area | SOA                           | 5                     | 2019     | Expert           |
-| Working area | Team Lead                     | 2                     | 2017      | Experienced      |
-| Working area | Test-driven Development (TDD) | 2                     | 2019     | Very experienced |
-| Working area | The Internet of Things (IoT)  | 2                     | 2019     | Expert           |
-| Working area | Web Services                  | 5                     | 2019     | Expert           |
+## :briefcase: Consulting
 
-| Category          | Competence                     | Years of experience   | Last used | Level            |
-| ----------------- | ------------------------------ | --------------------- | --------- | ---------------- |
-| Languages         | C# (C-Sharp)                   | 9                     | 2019     | Expert           |
-| Languages         | HTML5                          | 2                     | 2018      | Experienced      |
-| Languages         | JavaScript                     | 2                     | 2019     | Experienced      |
-| Languages         | SQL                            | 5                     | 2019     | Very experienced |
-| Technologies      | .NET                           | 9                     | 2019     | Expert           |
-| Technologies      | .NET Core                      | 1                     | 2019     | Expert           |
-| Technologies      | ASP.NET                        | 5                     | 2019     | Expert           |
-| Technologies      | ASP.NET Web API                | 5                     | 2019     | Expert           |
-| Technologies      | CSS 3 (Cascading Style Sheets) | 2                     | 2019     | Experienced      |
-| Technologies      | OAuth2 (Open Authorization)    | 1                     | 2017      | Experienced      |
-| Technologies      | SOLID (object-oriented design) | 2                     | 2017      | Experienced      |
-| Technologies      | Swagger                        | 3                     | 2019     | Very experienced |
-| Platforms         | ASP.NET Core                   | 1                     | 2019     | Expert           |
-| Platforms         | Microsoft Azure                | 5                     | 2019     | Expert           |
-| Platforms         | Microsoft Azure DevOps         | 4                     | 2019     | Very experienced |
-| Development tools | Docker                         | 1                     | 2019     | Experienced      |
-| Development tools | Kubernetes (K8s)               | 1                     | 2019     | Experienced      |
-| Development tools | Node.js                        | 1                     | 2018      | Good knowledge   |
-| Methods           | Continuous Delivery (CD)       | 2                     | 2019     | Experienced      |
-| Methods           | Continuous Integration         | 2                     | 2019     | Experienced      |
-| Methods           | Distributed computing          | 1                     | 2019     | Good knowledge   |
-| Methods           | Domain-driven design (DDD)     | 1                     | 2017      | Good knowledge   |
-| Methods           | OData (Open Data Protocol)     | 2                     | 2017      | Very experienced |
-| Methods           | Scrum                          | 1                     | 2019     | Some knowledge   |
+Experienced in defining requirements in collaboration with business domain experts, Enterprise Architects and stakeholders
+
+Very experienced in documenting technical solution details, architecture and operational information
+
+## :iphone: Frontend
+
+Experienced with HTML5, CSS3, various layout frameworks, less, sass, post-css, jQuery, Angular 2, React (this website and more), D3.js graphs
+
+## :eyeglasses: Personal
+
+* Detail oriented, analytical
+
+* Pragmatic and results driven
+
+* Focus on clear communication and knowledge sharing
