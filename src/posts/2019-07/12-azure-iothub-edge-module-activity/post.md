@@ -174,7 +174,7 @@ private const string MODULE_QUERY_PREFIX =
 
 // Default conditions that are always used to limit the result
 private const string DEVICE_ENABLED_QUERY = "status = 'enabled'";
-private const string MODULE_ACTIVE_QUERY = "lastActivityTime > '0001-01-01T00:00:00'";
+private const string MODULE_ACTIVE_QUERY = "lastActivityTime > '0001-01-01T00:00:00Z'";
 
 /// <summary>
 ///     Query enabled device and modules for activity.
@@ -193,11 +193,16 @@ public async Task<List<TwinActivity>> GetDeviceActivityAsync(
 {
     var queryEnabledOnly = CombinedQuery(deviceQuery, DEVICE_ENABLED_QUERY);
     var dQuery = $"{QUERY_PREFIX} WHERE {queryEnabledOnly}";
-    var devices = await GetTwinsByQueryAsync(dQuery, null, -1, ct);
 
     var queryActiveModulesOnly = CombinedQuery(moduleQuery, MODULE_ACTIVE_QUERY);
     var mQuery = $"{MODULE_QUERY_PREFIX} WHERE {queryActiveModulesOnly}";
-    var modules = await GetTwinsByQueryAsync(mQuery, null, -1, ct);
+
+    var devicesTask = GetTwinsByQueryAsync(dQuery, null, -1, ct);
+    var modulesTask = GetTwinsByQueryAsync(mQuery, null, -1, ct);
+
+    // Parallel execution
+    await Task.WhenAll(devicesTask, modulesTask);
+    var (devices, modules) = (await devicesTask, await modulesTask);
 
     var edgeDevices = GetEdgeDevices(devices.Result, modules.Result);
 
@@ -219,8 +224,8 @@ public async Task<List<TwinActivity>> GetDeviceActivityAsync(
 }
 
 /// <summary>
-/// From the lists of given device and module twins, get the ones that that identify having IoT Edge capability
-/// and return the device and the last active module for that device.
+/// From the lists of given device and module twins, get the ones that that identify having
+/// IoT Edge capability and return the device and the last active module for that device.
 /// </summary>
 private static Dictionary<string, (Twin Twin, Twin LastActiveModule)>
     GetEdgeDevices(IEnumerable<Twin> deviceTwins, IEnumerable<Twin> moduleTwins)
@@ -248,7 +253,7 @@ public class TwinActivity
 }
 ```
 
-The `GetDeviceActivityAsync` method can take a device query and a module query and will restrict on both:
+The `GetDeviceActivityAsync` method can take a device query and a module query and will restrict on both to find IoT Edge devices:
 
 ```csharp
 var activeSinceTime = TimeSpan.FromHours(1);
@@ -260,11 +265,22 @@ var moduleQuery = $"lastActivityTime >= '{activityAfter:yyyy-MM-ddTHH:mm:ssZ}'";
 // Restrict devices by tag
 var deviceQuery = $"tags.environment = 'production'";
 
+// We can count IoT Edge devices that fullfil the module query:
 var twins = await GetDeviceActivityAsync(deviceQuery, moduleQuery);
-
-// Let's count only IoT Edge devices:
 return twins.Where(x => x.IsEdgeDevice).Count();
 ```
+
+Or use LINQ on `LatestActivity` for a full count of active devices:
+
+```csharp
+var deviceQuery = $"tags.environment = 'production'";
+var twins = await GetDeviceActivityAsync(deviceQuery);
+return twins.Where(x => x.LatestActivity >= activityAfter).Count();
+```
+
+## Full source
+
+Here is the code in a single file: [gist](https://gist.github.com/dsschneidermann/a9aaa560b8e77d49d17d6cc8f45564dd)
 
 ## Caveats
 
