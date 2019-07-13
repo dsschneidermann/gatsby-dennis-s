@@ -1,16 +1,20 @@
 :root {
   /* light theme color */
   --light-background: #fff;
+  --light-background-code: #eaeaea;
   --light-background-secondary: #eaeaea;
   --light-color: #222;
   --light-color-secondary: #999;
+  --light-header-color: #222;
   --light-border-color: #dcdcdc;
 
   /* dark theme colors */
   --dark-background: #292a2d;
+  --dark-background-code: #1a1a1d;
   --dark-background-secondary: #3b3d42;
   --dark-color: #a9a9b3;
   --dark-color-secondary: #73747b;
+  --dark-header-color: #dcdcdc;
   --dark-border-color: #4a4b50;
 
   /* custom colors */

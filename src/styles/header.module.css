@@ -42,11 +42,16 @@
 .cursor {
   display: inline-block;
   width: 10px;
-  height: 1rem;
-  background: #fe5186;
+  height: 0.1rem;
+  margin-top: 0.9rem;
+  background: black;
   margin-left: 5px;
   border-radius: 1px;
   animation: cursor 1s infinite;
+
+  :global .dark-theme :local & {
+    background: var(--dark-header-color);
+  }
 }
 
 .text,

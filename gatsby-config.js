@@ -7,10 +7,11 @@ const postCSSMixins = require('postcss-mixins')
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.dennis-s.dk`,
     title: `Dennis S`,
     description: `A simple starter for Gatsby. That's it.`,
     copyrights: '',
-    author: `@panr`,
+    author: `Dennis`,
     logo: {
       src: '',
       alt: '',
@@ -28,6 +29,14 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-TQWJ63L",
+        includeInDevelopment: false,
+      },
+    },
     `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     {
