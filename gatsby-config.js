@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.dennis-s.dk`,
     title: `Dennis S`,
-    description: `A simple starter for Gatsby. That's it.`,
+    description: `A simple tech blog made with React and Gatsby. That's it. I'll need to put an intro blurb here at some point.`,
     copyrights: '',
     author: `Dennis`,
     logo: {
