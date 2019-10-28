@@ -10250,10 +10250,10 @@ querystringify@^2.1.1:
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
 
-rambdax@^1.8.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/rambdax/-/rambdax-1.9.0.tgz#ff35fd91368fa83d75bc5206b9d7e892752aa406"
-  integrity sha512-fpYhT2mrUejiAsHXKsU/suvJeosyCCpT6MKXg8bFs1ZclbWrxctO8x3dEMJrsvvH2cPQDhSn1WofRHsPmg4jLA==
+rambdax@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/rambdax/-/rambdax-2.17.0.tgz#986cc6ffd34c0d85b9151311e08485388316be18"
+  integrity sha512-OoSU9tKeP0MJjGKdFSh+X2+6V4+IT3oMOkSUdcadn5VAbkRYmW1nyEmFSYh9wIB1TPGwVdIGr7axDKVFBqo+PA==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
