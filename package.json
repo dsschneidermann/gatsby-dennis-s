@@ -34,7 +34,7 @@
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-plugin-sitemap": "^2.2.3",
     "gatsby-remark-emoji-unicode": "^0.1.0",
-    "gatsby-remark-images": "^3.0.1",
+    "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-prismjs": "^3.3.9",
     "gatsby-remark-smartypants": "^2.1.2",
     "gatsby-source-filesystem": "^2.0.8",
