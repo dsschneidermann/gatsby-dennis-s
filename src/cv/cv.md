@@ -10,7 +10,7 @@ coverImage: ../images/cv-head.jpg
 
 My current career goals:
 - Remain a top-tier software architect and polyglot developer
-- Work with IoT projects and continue to improve domain knowledge 
+- Work with IoT projects and continue to improve domain knowledge
 - Work closely with data scientists and ML experts to facilitate use-cases
 
 <div class="cvSummary">
@@ -22,7 +22,7 @@ My current career goals:
 
 :heavy_check_mark: Architecture & Design: **5 years**
 
-:heavy_check_mark: IoT / Big Data: **2 years**
+:heavy_check_mark: IoT / Big Data: **3 years**
 
 :heavy_check_mark: Azure / Web Services: **4 years**
 
@@ -36,7 +36,7 @@ My current career goals:
 
 :star: SW Design, Functional
 
-:star: Azure Cloud
+:star: Azure Cloud, AWS
 
 </div>
 </div>
@@ -44,13 +44,13 @@ My current career goals:
 
 ## :pencil: Expertise
 
-<span class="highlightOrange">Development</span> C<i>#</i>, .NET Core, ASP .NET Core, LINQ, Rx, SQL for MSSQL and PostgreSQL, schema design, locks and use of isolation in distributed scenarios, database performance, versioning and more
+<span class="highlightOrange">Development</span> C<i>#</i>, Python, .NET Core, ASP .NET Core, LINQ, Rx, Django, SQL for MSSQL and PostgreSQL, schema design, locks and use of isolation in distributed scenarios, database performance, versioning and more
 
 <span class="highlightOrange">Cloud</span> IoT and IoT Edge architecture, Big Data architecture, Streaming Lambda/Kappa architectures, Event-driven architecture, Time Series databases, Web Services, REST, Microservices, DevOps and CI/CD
 
 <span class="highlightOrange">Design</span> Domain-Driven-Design, Test-Driven-Development, Behavior-Driven-Development, Actor-based Systems, Property/Model-based Testing, API Design, REST, Functional programming, immutability, concurrency, resilience, category theory
 
-<span class="highlightOrange">Technologies</span> Azure PaaS components, IoT Hub, Event Hub, IoT Edge SDK, CosmosDB, Logic Apps, Azure Stream Analytics, Azure Container Instances, Azure Kubernetes Service, Docker, Azure DevOps
+<span class="highlightOrange">Technologies</span> Docker, Azure PaaS components, AWS PaaS components, Azure IoT Hub, IoT Edge SDK, AWS IoT, Azure Stream Analytics, AWS Lambda, Azure Functions, Containers on Azure (ACI and AppService), Containers on AWS (ECS), Azure ARM Templates, AWS CloudFormation, Pulumi (cross-cloud), Kubernetes
 
 <br>
 
@@ -68,7 +68,7 @@ Extensive experience with Azure infrastructure - this includes working with Azur
 </div>
 <div>
 
-For the last 2 years I have worked *exclusively* with IoT projects, both on the Edge and cloud, which means that I have extensive experience with IoT architectures and related Big Data and Streaming architectures.
+For the last 3 years I have worked *exclusively* with IoT projects, both on the Edge and cloud, which means that I have extensive experience with IoT architectures and related Big Data and Streaming architectures.
 
 As a consultant, I aim to keep a broad base of knowledge that's updated with the latest in software quality, agile methods, security patterns, Cloud Native, Microservices, data science and analytics, and DevOps and CI/CD. From earlier projects, I also have experience with front-end development.
 
@@ -77,7 +77,34 @@ As a consultant, I aim to keep a broad base of knowledge that's updated with the
 <br>
 
 ## :speech_balloon: Work Experience
+​
+<div class="cvProject">
 
+### Oct 2019 -- ongoing, Flowtale Platform Accelerator
+
+Lead architect on design and implementation of a multi-cloud IoT and Data Collection accelerator for quickly building customized platforms.
+
+- Designed API for devices, assets, alarms, real-time data, implemented in Django with Rest Framework and JSON:API.
+- Designed topics structure for RabbitMQ and data ingress with StreamSets Data Pipelines.
+- Designed and implemented PoC for streaming data processing with Pulsar as broker and Presto as the querying engine.
+- Implemented adminstrative functions in Django frontend and a Vue data overview website.
+- Implemented a PoC of AWS IoT communication and just-in-time device provisioning with certificates.
+- Implemented full infrastructure as code deployment of platform with Pulumi and packaged as a single Docker image.
+- Technologies used: <span class="highlightBlue">*Azure IoT Hub, AWS IoT, REST, JSON:API, Azure Functions, AWS Lambda, TimescaleDB, Django, Python, Typescript, StreamSets Data Pipelines, RabbitMQ, Docker, Pulumi*</span>
+
+</div>
+<div class="cvProject">
+
+### Sep 2019 -- Oct 2019, Major Telco Provider
+
+Architecture and Roadmap for upcoming IoT Platform.
+
+- Facilitated architecture discussions for IoT platform, big data cloud strategy and device procurement roadmap.
+- Created material for supporting the choice of direction within the IoT platforms space.
+- Created use-cases for running analytics on a variety of devices and sensor types.
+- Technologies used: <span class="highlightBlue">*Azure IoT Hub, REST, TimescaleDB, React, Django, Python*</span>
+
+</div>
 <div class="cvProject">
 
 ### July 2019 -- Sep 2019, Glaze IoT Platform
@@ -91,6 +118,8 @@ Design and implementation of an Azure-based multi-tenant IoT platform.
 - Implemented bi-directional communication with Sigfox devices from the Azure cloud.
 - Technologies used: <span class="highlightBlue">*Azure IoT Hub, Azure Time Series Insights (2019-preview), REST, OpenAPI 3.0, JSON Patch, GraphQL, dotNetify-React, React Hooks, react-vis, ASP .NET Core 3, Entity Framework Core, C#, Sigfox Backend, Waylay.io*</span>
 
+</div>
+<div class="cvProject">
 
 ### June 2019 -- July 2019, US-based IoT Analytics Provider
 
@@ -247,7 +276,7 @@ Studying Computer Science and working a period for Accit Aps, a small consultanc
 
 | Place of work / title                                                 | Years       |
 | --------------------------------------------------------------------- | ----------- |
-| **Flowtale** <br> Senior IoT Architect                                | 2019 - Now  |
+| **Flowtale** <br> Lead IoT Architect                                  | 2019 - Now  |
 | **Glaze** <br> IoT Advisor                                            | 2018 - 2019 |
 | **Avanade** <br> Consultant / Enterprise IT / Web and Mobile          | 2016 - 2018 |
 | **Capgemini Sogeti** <br> Consultant / Website Solutions              | 2015 - 2016 |
