@@ -98,7 +98,7 @@ Lead architect on a multi-cloud and hybrid IoT and data collection Platform Acce
 </div>
 <div class="cvProject">
 
-### Sep 2019 -- Oct 2019, Major Telco Provider
+### Sep 2019 -- Dec 2019, Major Telco Provider
 
 Architecture and Roadmap for upcoming IoT Platform.
 
@@ -130,7 +130,7 @@ Azure IoT Cloud development for an Analytics Platform.
 
 - Establish architecture for using Device Provisioning Service to enroll devices with X.509/TPM based authentication.
 - Setup automated deployments of modules to IoT Edge devices through Azure IoT Hub.
-- Implemented a Web Service to continually check the license compliance of modules installed in IoT Edge devices.
+- Implemented a Web Service to continuously check the license compliance of modules installed in IoT Edge devices.
 - Technologies used: <span class="highlightBlue">*Azure IoT Hub, Azure Device Provisioning Service, Azure IoT Edge, ASP .NET Core, Hangfire, C#, Azure Container Instances, Azure Resource Manager (ARM), Docker*</span>
 
 </div>
