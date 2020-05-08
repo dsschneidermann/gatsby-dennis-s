@@ -1,6 +1,6 @@
 ---
 title: CV
-date: 2019-06-07
+date: 2020-05-08
 author: Dennis
 path: /cv
 coverImage: ../images/cv-head.jpg
@@ -18,25 +18,25 @@ My current career goals:
 
 ### EXPERIENCE
 
-:heavy_check_mark: C<i>#</i> .NET: **9 years experience**
+:heavy_check_mark: Software: **10 years experience**
 
-:heavy_check_mark: Architecture & Design: **5 years**
+:heavy_check_mark: Architecture & Design: **7 years**
 
 :heavy_check_mark: IoT / Big Data: **3 years**
 
-:heavy_check_mark: Azure / Web Services: **4 years**
+:heavy_check_mark: Cloud / Web Services: **5 years**
 
 </div>
 <div>
 
 ### EXPERT LEVEL
-:star: C<i>#</i>, .NET Core, SQL, Time Series Data
+:star: C<i>#</i>, Python, .NET, SQL, Time Series Data
 
 :star: IoT and Big Data Architecture
 
 :star: SW Design, Functional
 
-:star: Azure Cloud, AWS
+:star: Azure, AWS
 
 </div>
 </div>
@@ -44,13 +44,13 @@ My current career goals:
 
 ## :pencil: Expertise
 
-<span class="highlightOrange">Development</span> C<i>#</i>, Python, .NET Core, ASP .NET Core, LINQ, Rx, Django, SQL for MSSQL and PostgreSQL, schema design, locks and use of isolation in distributed scenarios, database performance, versioning and more
+<span class="highlightOrange">Development</span> C<i>#</i>, Python, .NET Core, ASP .NET Core, Django, LINQ, Rx, SQL for MSSQL and PostgreSQL, schema design, locks and use of isolation in distributed scenarios, database performance, versioning and more
 
 <span class="highlightOrange">Cloud</span> IoT and IoT Edge architecture, Big Data architecture, Streaming Lambda/Kappa architectures, Event-driven architecture, Time Series databases, Web Services, REST, Microservices, DevOps and CI/CD
 
-<span class="highlightOrange">Design</span> Domain-Driven-Design, Test-Driven-Development, Behavior-Driven-Development, Actor-based Systems, Property/Model-based Testing, API Design, REST, Functional programming, immutability, concurrency, resilience, category theory
+<span class="highlightOrange">Design</span> Domain-Driven-Design, Test-Driven-Development, Behavior-Driven-Development, Actor-based Systems, Property/Model-based Testing, API Design, REST, OpenAPI, JSON:API, Functional programming, immutability, concurrency, resilience, category theory
 
-<span class="highlightOrange">Technologies</span> Docker, Azure PaaS components, AWS PaaS components, Azure IoT Hub, IoT Edge SDK, AWS IoT, Azure Stream Analytics, AWS Lambda, Azure Functions, Containers on Azure (ACI and AppService), Containers on AWS (ECS), Azure ARM Templates, AWS CloudFormation, Pulumi (cross-cloud), Kubernetes
+<span class="highlightOrange">Technologies</span> Docker, Azure PaaS components, AWS PaaS components, Azure IoT Hub, IoT Edge SDK, AWS IoT, Azure Stream Analytics, AWS Lambda, Azure Functions, Containers on Azure (ACI and AppService), Containers on AWS (ECS), Azure ARM Templates, AWS CloudFormation, Pulumi (Terraform cross-cloud), Kubernetes
 
 <br>
 
@@ -61,7 +61,7 @@ My current career goals:
 <div class="cvIntro">
 <div>
 
-Architect and SW specialist with 5 years of experience developing for Azure and cloud platforms, with a focus on IoT, Web Services in back-end Enterprise IT, Security and DevOps.
+Architect and SW specialist with 7 years of experience developing for Azure and cloud platforms, with a focus on IoT, Web Services in back-end Enterprise IT, Security and DevOps.
 
 Extensive experience with Azure infrastructure - this includes working with Azure Resource Manager (ARM) deployments, Azure Active Directory, Application Manifests and running applications with Kubernetes, Service Fabric, Azure Container Instances and Docker.
 
@@ -82,14 +82,17 @@ As a consultant, I aim to keep a broad base of knowledge that's updated with the
 
 ### Oct 2019 -- ongoing, Flowtale Platform Accelerator
 
-Lead architect on design and implementation of a multi-cloud IoT and Data Collection accelerator for quickly building customized platforms.
+Lead architect on a multi-cloud and hybrid IoT and data collection Platform Accelerator for quickly building customized platforms.
 
-- Designed API for devices, assets, alarms, real-time data, implemented in Django with Rest Framework and JSON:API.
-- Designed topics structure for RabbitMQ and data ingress with StreamSets Data Pipelines.
-- Designed and implemented PoC for streaming data processing with Pulsar as broker and Presto as the querying engine.
-- Implemented adminstrative functions in Django frontend and a Vue data overview website.
-- Implemented a PoC of AWS IoT communication and just-in-time device provisioning with certificates.
-- Implemented full infrastructure as code deployment of platform with Pulumi and packaged as a single Docker image.
+[Flowtale Platform Accelerator website](https://flowtale.ai/flowtale-platform-accelerator)
+
+- API for devices, assets, alarms and real-time data implemented in Python Django, with full JSON:API support.
+- Administrative functions implemented in a Django frontend and Vue single-page application.
+- Designed a topics structure and data ingress for flexible integrations using StreamSets Data Pipelines.
+- Implemented integration of Azure IoTHub for IoT Edge devices and for third-party clouds.
+- Implemented a PoC on AWS IoT integration and just-in-time device provisioning with certificates.
+- Designed and implemented a PoC for stream analytics processing with Pulsar as broker and Presto as querying engine.
+- Implemented full infrastructure as code deployment of the platform with Pulumi and packaged as a single Docker image.
 - Technologies used: <span class="highlightBlue">*Azure IoT Hub, AWS IoT, REST, JSON:API, Azure Functions, AWS Lambda, TimescaleDB, Django, Python, Typescript, StreamSets Data Pipelines, RabbitMQ, Docker, Pulumi*</span>
 
 </div>
@@ -287,21 +290,21 @@ Studying Computer Science and working a period for Accit Aps, a small consultanc
 
 ### Bachelor Computer Science, University of Copenhagen
 
-Finished 2010, after taking an extra year of Master classes. Topics covered were compiler and language design, functional programming, concurrency, data structures and algorithms. Bachelor project was about simulation and analysis of scheduling strategies for a specific protein-unfolding algorithm on the PlayStation 3 multi-processor, which I am proud to have received the grade A for.
+Finished 2010, after taking an extra year of Master classes. Topics covered were compiler and language design, functional programming, concurrency, data structures and algorithms. Bachelor project was about simulation and analysis of scheduling strategies for a specific protein-unfolding algorithm on the PlayStation 3 multi-processor, for which I am proud to have received the grade A.
 
 ## :hammer: Programming
 
-C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (order of most to least): Python, F<i>#</i>, Databricks/Spark, HiveQL, R, Azure Steam Analytics, Node.js, Clojure, Haskell, Elm, Go, Elixir and Java
+Python, C<i>#</i>, SQL and Javascript are my commonly used languages, aside from that I have experience with (in no particular order): Databricks/Spark, HiveQL, R, ASAQL for Stream Analytics, F<i>#</i>, Node.js, Clojure, Haskell, Elm, Go, Elixir and of course Java
 
 ## :briefcase: Consulting
 
-Experienced in defining requirements in collaboration with business domain experts, Enterprise Architects and stakeholders
+Experienced in defining requirements in collaboration with business domain experts, Enterprise Architects and stakeholders.
 
-Very experienced in documenting technical solution details, architecture and operational information
+Very experienced in documenting technical solution details, architecture and operational information.
 
 ## :iphone: Frontend
 
-Experienced with HTML5, CSS3, various layout frameworks, less, sass, post-css, jQuery, Angular, React (this website and more), D3.js graphs, react-vis graphs, React Hooks, reactn and dotNetify-React
+Experienced with HTML5, CSS3, various layout frameworks, less, sass, post-css, jQuery, Angular, React (this website and more), Vue, D3.js graphs, react-vis graphs, React Hooks, reactn, dotNetify and other websocket channel libraries.
 
 ## :eyeglasses: Personal
 
