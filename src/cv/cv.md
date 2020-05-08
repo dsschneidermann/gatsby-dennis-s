@@ -84,7 +84,7 @@ As a consultant, I aim to keep a broad base of knowledge that's updated with the
 
 Lead architect on a multi-cloud and hybrid IoT and data collection Platform Accelerator for quickly building customized platforms.
 
-[Flowtale Platform Accelerator website](https://flowtale.ai/flowtale-platform-accelerator)
+<a href="https://flowtale.ai/flowtale-platform-accelerator/" target="_blank">Flowtale Platform Accelerator website</a>
 
 - API for devices, assets, alarms and real-time data implemented in Python Django, with full JSON:API support.
 - Administrative functions implemented in a Django frontend and Vue single-page application.
