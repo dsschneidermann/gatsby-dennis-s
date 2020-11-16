@@ -32,7 +32,7 @@
     "gatsby-plugin-postcss": "^2.3.1",
     "gatsby-plugin-react-helmet": "^3.1.5",
     "gatsby-plugin-sharp": "^2.0.17",
-    "gatsby-plugin-sitemap": "^2.2.3",
+    "gatsby-plugin-sitemap": "^2.6.0",
     "gatsby-remark-emoji-unicode": "^0.1.0",
     "gatsby-remark-images": "^3.3.2",
     "gatsby-remark-prismjs": "^3.3.9",
