@@ -1,6 +1,6 @@
 ---
 title: CV
-date: 2020-05-08
+date: 2021-06-04
 author: Dennis
 path: /cv
 coverImage: ../images/cv-head.jpg
@@ -10,7 +10,7 @@ coverImage: ../images/cv-head.jpg
 
 My current career goals:
 - Remain a top-tier software architect and polyglot developer
-- Work with IoT projects and continue to improve domain knowledge
+- Work with IoT projects and continue to improve domain knowledge 
 - Work closely with data scientists and ML experts to facilitate use-cases
 
 <div class="cvSummary">
@@ -18,13 +18,13 @@ My current career goals:
 
 ### EXPERIENCE
 
-:heavy_check_mark: Software: **10 years experience**
+:heavy_check_mark: Software: **11 years experience**
 
-:heavy_check_mark: Architecture & Design: **7 years**
+:heavy_check_mark: Architecture & Design: **8 years**
 
-:heavy_check_mark: IoT / Big Data: **3 years**
+:heavy_check_mark: IoT / Big Data: **4 years**
 
-:heavy_check_mark: Cloud / Web Services: **5 years**
+:heavy_check_mark: Cloud / Web Services: **6 years**
 
 </div>
 <div>
@@ -61,14 +61,14 @@ My current career goals:
 <div class="cvIntro">
 <div>
 
-Architect and SW specialist with 7 years of experience developing for Azure and cloud platforms, with a focus on IoT, Web Services in back-end Enterprise IT, Security and DevOps.
+Architect and SW specialist with 8 years of experience developing for Azure and cloud platforms, with a focus on IoT, Web Services in back-end Enterprise IT, Security and DevOps.
 
 Extensive experience with Azure infrastructure - this includes working with Azure Resource Manager (ARM) deployments, Azure Active Directory, Application Manifests and running applications with Kubernetes, Service Fabric, Azure Container Instances and Docker.
 
 </div>
 <div>
 
-For the last 3 years I have worked *exclusively* with IoT projects, both on the Edge and cloud, which means that I have extensive experience with IoT architectures and related Big Data and Streaming architectures.
+For the last 4 years I have worked *exclusively* with IoT projects, both on the Edge and cloud, which means that I have extensive experience with IoT architectures and related Big Data and Streaming architectures.
 
 As a consultant, I aim to keep a broad base of knowledge that's updated with the latest in software quality, agile methods, security patterns, Cloud Native, Microservices, data science and analytics, and DevOps and CI/CD. From earlier projects, I also have experience with front-end development.
 
@@ -82,30 +82,30 @@ As a consultant, I aim to keep a broad base of knowledge that's updated with the
 
 ### Oct 2019 -- ongoing, Flowtale Platform Accelerator
 
-Lead architect on a multi-cloud and hybrid IoT and data collection Platform Accelerator for quickly building customized platforms.
+Lead architect on a multi-cloud and hybrid IoT and data collection Accelerator for quickly building customized platforms.
 
-<a href="https://flowtale.ai/flowtale-platform-accelerator/" target="_blank">Flowtale Platform Accelerator website</a>
+<a href="https://flowtale.ai/flowtale-data-accelerator/" target="_blank">Flowtale Data Accelerator website</a>
 
-- API for devices, assets, alarms and real-time data implemented in Python Django, with full JSON:API support.
-- Administrative functions implemented in a Django frontend and Vue single-page application.
-- Designed a topics structure and data ingress for flexible integrations using StreamSets Data Pipelines.
-- Implemented integration of Azure IoTHub for IoT Edge devices and for third-party clouds.
-- Implemented a PoC on AWS IoT integration and just-in-time device provisioning with certificates.
-- Designed and implemented a PoC for stream analytics processing with Pulsar as broker and Presto as querying engine.
-- Implemented full infrastructure as code deployment of the platform with Pulumi and packaged as a single Docker image.
+- Several successful projects completed using Accelerator and core components.
+- APIs for devices, assets, alarms and real-time data implemented with full JSON:API support.
+- Flexible data schema modelling and data ingress from devices and integrations using StreamSets Data Pipelines.
+- Full integration of Azure IoTHub for IoT Edge devices and Azure Function integrations for third-party cloud APIs.
+- AWS IoT integration and just-in-time device provisioning with certificates.
+- Stream analytics processing with Pulsar as persistency layer and Presto as querying engine.
+- Full infrastructure as code continuous integration deployment and integrity checks with Pulumi, containerized as a single deployment image for full repeatability.
 - Technologies used: <span class="highlightBlue">*Azure IoT Hub, AWS IoT, REST, JSON:API, Azure Functions, AWS Lambda, TimescaleDB, Django, Python, Typescript, StreamSets Data Pipelines, RabbitMQ, Docker, Pulumi*</span>
 
 </div>
 <div class="cvProject">
 
-### Sep 2019 -- Dec 2019, Major Telco Provider
+### Sep 2019 -- August 2020, Major Telco Provider
 
-Architecture and Roadmap for upcoming IoT Platform.
+Architecture and roadmap for upcoming IoT Platform.
 
-- Facilitated architecture discussions for IoT platform, big data cloud strategy and device procurement roadmap.
-- Created material for supporting the choice of direction within the IoT platforms space.
-- Created use-cases for running analytics on a variety of devices and sensor types.
-- Technologies used: <span class="highlightBlue">*Azure IoT Hub, REST, TimescaleDB, React, Django, Python*</span>
+- Architecture for IoT platform, big data cloud strategy and device procurement roadmap.
+- Supported analysis for the choice of direction within the IoT space and use-cases analysis for running analytics on a variety of devices and sensor types.
+- Lead a small development team to create data ingress and processing layer PoCs for specific types of devices via Azure IoT Hub, and exposing the data visualizations to end-users with Plotly's Dash web visualization backend.
+- Technologies used: <span class="highlightBlue">*Azure IoT Hub, REST, TimescaleDB, React, Django, Plotly Dash, Python*</span>
 
 </div>
 <div class="cvProject">
@@ -130,7 +130,7 @@ Azure IoT Cloud development for an Analytics Platform.
 
 - Establish architecture for using Device Provisioning Service to enroll devices with X.509/TPM based authentication.
 - Setup automated deployments of modules to IoT Edge devices through Azure IoT Hub.
-- Implemented a Web Service to continuously check the license compliance of modules installed in IoT Edge devices.
+- Implemented a Web Service to continously check the license compliance of modules installed in IoT Edge devices.
 - Technologies used: <span class="highlightBlue">*Azure IoT Hub, Azure Device Provisioning Service, Azure IoT Edge, ASP .NET Core, Hangfire, C#, Azure Container Instances, Azure Resource Manager (ARM), Docker*</span>
 
 </div>
